@@ -2,11 +2,16 @@ namespace RetakeTest1.Data.Dtos;
 
 public class AddClientDto
 {
+    public ClientInfoDto ClientInfo { get; set; } = new ClientInfoDto();
+    public CarInfoDto Car { get; set; } = new CarInfoDto();
+    
+}
+
+public class ClientInfoDto
+{
     public String FirstName { get; set; } = String.Empty;
     public String LastName { get; set; } = String.Empty;
     public String Address { get; set; } = String.Empty;
-    public CarInfoDto Car { get; set; } = new CarInfoDto();
-    
 }
 
 public class CarInfoDto

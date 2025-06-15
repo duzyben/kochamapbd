@@ -89,9 +89,9 @@ public class DbService : IDbService
                 @"INSERT INTO clients
             VALUES(@FirstName, @LastName, @Address);
             SELECT SCOPE_IDENTITY()";
-            command.Parameters.AddWithValue("@FirstName", client.FirstName);
-            command.Parameters.AddWithValue("@LastName", client.LastName);
-            command.Parameters.AddWithValue("@Address", client.Address);
+            command.Parameters.AddWithValue("@FirstName", client.ClientInfo.FirstName);
+            command.Parameters.AddWithValue("@LastName", client.ClientInfo.LastName);
+            command.Parameters.AddWithValue("@Address", client.ClientInfo.Address);
             var result = await command.ExecuteScalarAsync();
             int newClientId = Convert.ToInt32(result);
 
